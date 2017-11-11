@@ -49,6 +49,24 @@
           <div class="offset-sm-2 col-sm-8">
             <h1>{{title}}</h1>
             <p class="lead">{{description}}</p>
+            {% if notes or has_notes %}
+              <div class="container">
+                <h2>Notes</h2>
+                <div class="row">
+                  <ul>
+                  {% for note in notes %}
+                    <li>{{note}}</li>
+                  {% endfor %}
+                  </ul>
+                </div>
+                <form method="POST">
+                  {{ csrf_input }} <!-- Django Magic -->
+                  <label>Create Note</label>
+                  <input name="note">
+                  <input type="submit">
+                </form>
+              </div>
+            {% endif %}
           </div>
         </div>
       </div><!-- /.container -->
