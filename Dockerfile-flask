@@ -1,0 +1,6 @@
+FROM python:3.6
+ADD ./ /
+RUN pip install -r flask/requirements.txt; pip install gunicorn
+WORKDIR flask/
+EXPOSE 8000
+CMD gunicorn --bind 0.0.0.0:8000 -w 2 server:app

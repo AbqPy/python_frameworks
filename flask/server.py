@@ -2,6 +2,7 @@ import argparse
 from os import path
 from flask import Flask
 from jinja2 import Template
+from werkzeug.contrib.fixers import ProxyFix
 app = Flask("demo flask server")
 
 index_path = path.join(
@@ -36,7 +37,7 @@ def run_flask(app):
     parser.add_argument(
         "-host",
         "--host",
-        default="localhost",
+        default="0.0.0.0",
         help="Host to run server on"
     )
     parser.add_argument(
@@ -59,6 +60,8 @@ def run_flask(app):
         threaded=True
     )
 
+
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 if __name__ == '__main__':
     run_flask(app)
