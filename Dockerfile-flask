@@ -1,5 +1,4 @@
-FROM python:3.6
-ADD ./ /
+FROM example-base:latest
 RUN pip install -r flask/requirements.txt; pip install gunicorn
 WORKDIR flask/
 EXPOSE 8000
