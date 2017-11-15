@@ -1,7 +1,7 @@
 Flask Server Example
 ====================
 
-This is a basic Flask server example. It implements a basic basic
+This is a basic Flask server example. It implements a basic
 Database entry called `Note`. Users can create new notes and have them
 displayed on the home package.
 
@@ -11,6 +11,9 @@ Requirements
     * Flask-SQLAlchemy
     * Jinja2
 
+Running the Server::
+
+    python server.py
 
 Further Reading
 
