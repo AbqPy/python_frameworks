@@ -1,6 +1,9 @@
 Django Setup
 ============
 
+Recommended Tutorial::
+
+    `DjangoGirls Tutorial <https://tutorial.djangogirls.org/en/>`_
 
 Requirements
     * Django 1.11
